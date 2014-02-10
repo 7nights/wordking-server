@@ -1,7 +1,7 @@
 var 
-  user = require('./controllers/user'),
-  WDH = require('./controllers/WDH'),
-  WDC = require('./controllers/WDC'),
+  user = require('./controllers').User,
+  WDH = require('./controllers').WDH,
+  WDC = require('./controllers').WDC,
   upload = require('./middlewares/upload'),
   auth = require('./middlewares/auth').userRequired,
   authCsrf = require('./middlewares/auth').csrf,

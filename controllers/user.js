@@ -68,6 +68,11 @@ exports.signUp = function (req, res, next) {
     if (err) return next(err);
 
     if (users.length > 0) {
+      if (users[0].email == email && users[0].name == name) {
+        UV.check(users[0], function (result, it) {
+        if (result) emailSender.sendMail('signupcheck', {activateLink: config.activateLink + '/' + it.activateCode}, {to: users[0].email, subject: 'Please confirm your email'});
+        });
+      }
       if (users[0].name === name) return res.json({status: -1, message: '用户名已被占用', code: 'NicknameAlreadyTaken'});
       return res.json({status: -1, message: '此邮箱已经注册过', code: 'EmailAlreadyRegistered'});
     }

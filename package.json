@@ -12,7 +12,8 @@
     "eventproxy": "*",
     "colors": "*",
     "email-templates": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "imagemagick": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.1"

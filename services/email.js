@@ -33,7 +33,7 @@ emailTemplates(templatesDir, function (err, template) {
         text: text
       }, function (err, responseStatus) {
         if (err) throw err;
-        callback(responseStatus);
+        typeof callback === 'function' && callback(responseStatus);
       });
     });
   };

@@ -115,8 +115,8 @@ exports.signIn = function (req, res, next) {
     if (user.passwd !== passwd) return res.json({status: -1, message: '密码错误', code: 'WrongPassword'});
 
     // activated check
-    UV.check(user, function (passed) {
-      if (!passed) return res.json({status: -1, code: 'AccountNotActivated', message: '账号未激活'});
+    UV.check(user, function (found) {
+      if (found) return res.json({status: -1, code: 'AccountNotActivated', message: '账号未激活'});
 
       req.session.user = user;
 

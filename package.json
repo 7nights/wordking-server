@@ -11,7 +11,7 @@
     "xss": "0.0.5",
     "eventproxy": "*",
     "colors": "*",
-    "email-templates-windows": "*",
+    "email-templates": "*",
     "nodemailer": "*"
   },
   "devDependencies": {

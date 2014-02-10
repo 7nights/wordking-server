@@ -72,7 +72,7 @@ exports.signUp = function (req, res, next) {
       return res.json({status: -1, message: '此邮箱已经注册过', code: 'EmailAlreadyRegistered'});
     }
 
-    User.createUser(name, email, pass, "", function (err, u) {
+    User.createUser(name, email, pass, function (err, u) {
       if (err) return next(err);
 
       var activateCode = utils.randomStr(8);

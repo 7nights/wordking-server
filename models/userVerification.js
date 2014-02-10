@@ -26,6 +26,7 @@ exports.create = function (user, activateCode, callback) {
 exports.check = function (user, callback) {
   console.log('checking: ' + user._id);
   UV.findOne({userId: user._id}, function (err, it) {
+    console.log('result: ' + !!it, it);
     return callback(!!it, it);
   });
 };

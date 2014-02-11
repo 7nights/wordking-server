@@ -5,7 +5,7 @@ var
   config  = require('../config');
 
 var UserVerificationSchema = new Schema({
-  email: {type: String, unique: true},
+  userId: {type: ObjectId, unique: true},
   date: Date,
   activateCode: String
 });

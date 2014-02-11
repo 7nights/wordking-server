@@ -16,7 +16,7 @@ function md5(str) {
   return md5sum.digest('hex');
 }
 
-var REG_USERNAME = /^[a-zA-Z0-9\u4e00-\u9fa5]+[_.-]?[a-zA-Z0-9\u4e00-\u9fa5]+[_.-]?[a-zA-Z0-9\u4e00-\u9fa5]+$/;
+var REG_USERNAME = /^[a-zA-Z0-9\u4e00-\u9fa5\u0800-\u4e00]+[_.-]?[a-zA-Z0-9\u4e00-\u9fa5\u0800-\u4e00]+[_.-]?[a-zA-Z0-9\u4e00-\u9fa5\u0800-\u4e00]+$/;
 
 /**
  * @param {String} req.body.name
